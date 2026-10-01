@@ -14,7 +14,7 @@
 
 1. Giữa các từ khóa `if/for/while/switch/do` và dấu ngoặc **phải có khoảng trắng**.
 1. Thụt lề bằng 4 khoảng trắng, cấm sử dụng ký tự điều khiển Tab.
-1. Giữa hai dấu gạch chéo của comment và nội dung comment **có đúng một khoảng trắng**. e.g. `// 这是示例注释`
+1. Giữa hai dấu gạch chéo của comment và nội dung comment **có đúng một khoảng trắng**. e.g. `// Đây là chú thích ví dụ`
 1. Mỗi dòng không quá 120 ký tự; nếu vượt quá thì cần xuống dòng, việc xuống dòng tuân theo:
    - Dòng thứ hai **thụt vào 4 khoảng trắng** so với dòng thứ nhất; từ dòng thứ ba trở đi không thụt thêm.
    - Xuống dòng cùng với toán tử và phần bên dưới.
@@ -187,7 +187,7 @@ private static final Logger logger = LoggerFactory.getLogger(Abc.class);
 
 ### Câu lệnh SQL
 
-1. Không dùng count(列名) hoặc count(常量) để thay thế count(\*); count(\*) là câu lệnh đếm dòng tiêu chuẩn do SQL92 định nghĩa, không liên quan đến database, cũng không liên quan đến NULL và non-NULL. <br>**Giải thích**: count(\*) sẽ đếm các dòng có giá trị NULL, còn count(列名) sẽ không đếm các dòng mà cột này có giá trị NULL.
+1. Không dùng count(tên_cột) hoặc count(hằng_số) để thay thế count(\*); count(\*) là câu lệnh đếm dòng tiêu chuẩn do SQL92 định nghĩa, không liên quan đến database, cũng không liên quan đến NULL và non-NULL. <br>**Giải thích**: count(\*) sẽ đếm các dòng có giá trị NULL, còn count(tên_cột) sẽ không đếm các dòng mà cột này có giá trị NULL.
 1. `count(distinct column)` tính số dòng không trùng lặp của cột đó sau khi loại NULL. Chú ý rằng `count(distinct column1,column2)`, nếu một trong hai cột hoàn toàn là NULL thì dù cột còn lại có các giá trị khác nhau, kết quả vẫn là 0.
 1. Khi giá trị của một cột hoàn toàn là NULL, kết quả trả về của `count(column)` là 0, nhưng kết quả trả về của `sum(column)` là NULL, vì vậy cần chú ý vấn đề NPE khi sử dụng sum().<br> Có thể dùng cách sau để tránh vấn đề NPE của sum().
 
@@ -215,7 +215,7 @@ SELECT IF(ISNULL(SUM(g), 0, SUM(g))) FROM table;
 ### Dependency thư viện bên thứ hai
 
 1. Việc định nghĩa GAV tuân theo các quy tắc sau:
-   - Định dạng GroupID: com.{公司/BU}.业务线.\[子业务线\], nhiều nhất 4 cấp. e.g. `com.taobao.jstorm`
+   - Định dạng GroupID: com.{công_ty/BU}.lĩnh_vực.\[lĩnh_vực_con\], nhiều nhất 4 cấp. e.g. `com.taobao.jstorm`
    - Định dạng ArtifactID: tên product line-tên module. Về ngữ nghĩa không trùng lặp, không bỏ sót. e.g. `dubbo-client、fastjson-api、jstorm-tool`
    - Định dạng Version: số phiên bản chính.số phiên bản phụ.số bản sửa đổi.
 1. Ứng dụng trên production không được phụ thuộc vào version SNAPSHOT. <br>**Giải thích**: không phụ thuộc vào version SNAPSHOT là cách bảo đảm tính idempotent khi phát hành ứng dụng. Ngoài ra, điều này cũng có thể tăng tốc quá trình đóng gói build khi compile.

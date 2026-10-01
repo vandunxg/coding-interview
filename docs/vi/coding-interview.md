@@ -1,4 +1,4 @@
-# 《剑指 Offer》
+# 《Kiếm chỉ Offer》
 
 ## 3.1 Tìm số trùng lặp trong mảng
 
@@ -17,9 +17,9 @@ Hãy tìm một số bất kỳ bị lặp trong mảng.
 **Ví dụ**
 
 ```
-给定 nums = [2, 3, 5, 4, 3, 2, 6, 7]。
+Cho trước nums = [2, 3, 5, 4, 3, 2, 6, 7].
 
-返回 2 或 3。
+Trả về 2 hoặc 3.
 ```
 
 ### Cách giải
@@ -85,9 +85,9 @@ Hãy tìm một số bất kỳ bị lặp trong mảng, nhưng không được 
 **Ví dụ**
 
 ```
-给定 nums = [2, 3, 5, 4, 3, 2, 6, 7]。
+Cho trước nums = [2, 3, 5, 4, 3, 2, 6, 7].
 
-返回 2 或 3。
+Trả về 2 hoặc 3.
 ```
 
 **Câu hỏi suy nghĩ**: nếu chỉ được sử dụng không gian bổ sung `O(1)` thì phải làm thế nào?
@@ -172,18 +172,18 @@ Hãy hoàn thành một hàm nhận vào một mảng hai chiều như vậy và
 **Ví dụ**
 
 ```
-输入数组：
+Mảng đầu vào:
 
 [
-  [1,2,8,9]，
-  [2,4,9,12]，
-  [4,7,10,13]，
+  [1,2,8,9],
+  [2,4,9,12],
+  [4,7,10,13],
   [6,8,11,15]
 ]
 
-如果输入查找数值为7，则返回true，
+Nếu giá trị cần tìm là 7 thì trả về true,
 
-如果输入查找数值为5，则返回false。
+Nếu giá trị cần tìm là 5 thì trả về false.
 ```
 
 ### Cách giải
@@ -243,9 +243,9 @@ Lưu ý độ dài chuỗi đầu ra có thể lớn hơn `1000`.
 **Ví dụ**
 
 ```
-输入："We are happy."
+Đầu vào: "We are happy."
 
-输出："We%20are%20happy."
+Đầu ra: "We%20are%20happy."
 ```
 
 ### Cách giải
@@ -329,8 +329,8 @@ Lưu kết quả trả về bằng một mảng.
 **Ví dụ**
 
 ```
-输入：[2, 3, 5]
-返回：[5, 3, 2]
+Đầu vào: [2, 3, 5]
+Trả về: [5, 3, 2]
 ```
 
 ### Cách giải
@@ -388,12 +388,12 @@ Cho kết quả duyệt trước và duyệt giữa của một cây nhị phân
 **Ví dụ**
 
 ```
-给定：
-前序遍历是：[3, 9, 20, 15, 7]
-中序遍历是：[9, 3, 15, 20, 7]
+Cho trước:
+Duyệt trước là: [3, 9, 20, 15, 7]
+Duyệt giữa là: [9, 3, 15, 20, 7]
 
-返回：[3, 9, 20, null, null, 15, 7, null, null, null, null]
-返回的二叉树如下所示：
+Trả về: [3, 9, 20, null, null, 15, 7, null, null, null, null]
+Cây nhị phân được trả về như sau:
     3
    / \
   9  20
@@ -474,11 +474,11 @@ Cho một node bất kỳ của cây nhị phân, hãy tìm node tiếp theo c�
 **Ví dụ**
 
 ```
-假定二叉树是：[2, 1, 3, null, null, null, null]， 给出的是值等于 2 的节点。
+Giả sử cây nhị phân là [2, 1, 3, null, null, null, null], node được cho có giá trị bằng 2.
 
-则应返回值等于 3 的节点。
+Khi đó cần trả về node có giá trị bằng 3.
 
-解释：该二叉树的结构如下，2 的后继节点是 3。
+Giải thích: cấu trúc cây nhị phân như sau, node kế tiếp của 2 là 3.
   2
  / \
 1   3
@@ -723,9 +723,9 @@ Giả sử bắt đầu từ 0, số hạng thứ 0 là 0. `(n<=39)`
 **Ví dụ**
 
 ```
-输入整数 n=5
+Nhập số nguyên n=5
 
-返回 5
+Trả về 5
 ```
 
 ### Cách giải
@@ -998,9 +998,9 @@ Mảng có thể chứa các phần tử trùng lặp.
 **Ví dụ**
 
 ```
-输入：nums=[2,2,2,0,1]
+Đầu vào: nums=[2,2,2,0,1]
 
-输出：0
+Đầu ra: 0
 ```
 
 ### Cách giải
@@ -1200,20 +1200,20 @@ Hỏi robot có thể đi tới bao nhiêu ô?
 **Ví dụ 1**
 
 ```
-输入：k=7, m=4, n=5
+Đầu vào: k=7, m=4, n=5
 
-输出：20
+Đầu ra: 20
 ```
 
 **Ví dụ 2**
 
 ```
-输入：k=18, m=40, n=40
+Đầu vào: k=18, m=40, n=40
 
-输出：1484
+Đầu ra: 1484
 
-解释：当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。
-      但是，它不能进入方格（35,38），因为3+5+3+8 = 19。
+Giải thích: khi k=18, robot có thể đi vào ô (35,37), vì 3+5+3+7 = 18.
+            Tuy nhiên, robot không thể đi vào ô (35,38), vì 3+5+3+8 = 19.
 ```
 
 **Lưu ý**:
@@ -1284,9 +1284,9 @@ Ví dụ, khi độ dài sợi dây là 8, cắt thành ba đoạn có độ dà
 **Ví dụ**
 
 ```
-输入：8
+Đầu vào: 8
 
-输出：18
+Đầu ra: 18
 ```
 
 ### Cách giải
@@ -1385,18 +1385,18 @@ Nhập một số nguyên 32 bit, xuất số lượng chữ số 1 trong biểu
 **Ví dụ 1**
 
 ```
-输入：9
-输出：2
-解释：9的二进制表示是1001，一共有2个1。
+Đầu vào: 9
+Đầu ra: 2
+Giải thích: biểu diễn nhị phân của 9 là 1001, có tổng cộng 2 bit 1.
 ```
 
 **Ví dụ 2**
 
 ```
-输入：-2
-输出：31
-解释：-2在计算机里会被表示成11111111111111111111111111111110，
-      一共有31个1。
+Đầu vào: -2
+Đầu ra: 31
+Giải thích: trong máy tính, -2 được biểu diễn là 11111111111111111111111111111110,
+            có tổng cộng 31 bit 1.
 ```
 
 ### Cách giải
@@ -1441,11 +1441,11 @@ Vì n-1 sẽ đổi bit 1 ngoài cùng bên phải của n thành 0; nếu bên 
 Lấy một ví dụ:
 
 ```
-若 n = 1100，
+Nếu n = 1100,
 n - 1 = 1011
 n & (n - 1) = 1000
 
-即：把最右边的 1 变成了 0。
+Tức là: bit 1 ngoài cùng bên phải đã được đổi thành 0.
 ```
 
 > Sau khi trừ một số nguyên đi 1 rồi thực hiện phép AND theo bit với số nguyên ban đầu, kết quả tương đương với việc biến bit 1 ngoài cùng bên phải trong biểu diễn nhị phân của số nguyên thành 0. Nhiều bài toán nhị phân có thể được giải bằng cách này.
@@ -1506,17 +1506,17 @@ Không được sử dụng hàm thư viện, đồng thời không cần xét v
 **Ví dụ 1**
 
 ```
-输入：10 ，2
+Đầu vào: 10, 2
 
-输出：100
+Đầu ra: 100
 ```
 
 **Ví dụ 2**
 
 ```
-输入：10 ，-2
+Đầu vào: 10, -2
 
-输出：0.01
+Đầu ra: 0.01
 ```
 
 ### Cách giải
@@ -1733,10 +1733,10 @@ Giả sử linked list chắc chắn tồn tại và node đó chắc chắn kh�
 **Ví dụ**
 
 ```
-输入：链表 1->4->6->8
-      删掉节点：第2个节点即6（头节点为第0个节点）
+Đầu vào: linked list 1->4->6->8
+         Xóa node: node thứ 2 là 6 (node đầu có chỉ số 0)
 
-输出：新链表 1->4->8
+Đầu ra: linked list mới 1->4->8
 ```
 
 ### Cách giải
@@ -1782,17 +1782,17 @@ Trong một linked list đã sắp xếp có các node trùng lặp, hãy xóa c
 **Ví dụ 1**
 
 ```
-输入：1->2->3->3->4->4->5
+Đầu vào: 1->2->3->3->4->4->5
 
-输出：1->2->5
+Đầu ra: 1->2->5
 ```
 
 **Ví dụ 2**
 
 ```
-输入：1->1->1->2->3
+Đầu vào: 1->1->1->2->3
 
-输出：2->3
+Đầu ra: 2->3
 ```
 
 ### Cách giải
@@ -1901,12 +1901,12 @@ Ví dụ, chuỗi `"aaa"` khớp với pattern `"a.a"` và `"ab*ac*a"`, nhưng k
 **Ví dụ**
 
 ```
-输入：
+Đầu vào:
 
 s="aa"
 p="a*"
 
-输出:true
+Đầu ra: true
 ```
 
 ### Cách giải
@@ -1991,9 +1991,9 @@ Nhưng `"12e"`, `"1a3.14"`, `"1.2.3"`, `"+-5"` và `"12e+4.3"` đều không ph�
 **Ví dụ**:
 
 ```
-输入: "0"
+Đầu vào: "0"
 
-输出: true
+Đầu ra: true
 ```
 
 ### Cách giải
@@ -2001,14 +2001,14 @@ Nhưng `"12e"`, `"1a3.14"`, `"1.2.3"`, `"+-5"` và `"12e+4.3"` đều không ph�
 Chỉ cần dùng regular expression để khớp.
 
 ```
-[]  ： 字符集合
-()  ： 分组
-?   ： 重复 0 ~ 1
-+   ： 重复 1 ~ n
-*   ： 重复 0 ~ n
-.   ： 任意字符
-\\. ： 转义后的 .
-\\d ： 数字
+[]  : tập hợp ký tự
+()  : nhóm
+?   : lặp 0 ~ 1
++   : lặp 1 ~ n
+*   : lặp 0 ~ n
+.   : ký tự bất kỳ
+\\. : dấu . sau khi escape
+\\d : chữ số
 ```
 
 ```java
@@ -2310,9 +2310,9 @@ Nhập hai linked list được sắp xếp tăng dần, hợp nhất hai linked
 **Ví dụ**
 
 ```
-输入：1->3->5 , 2->4->5
+Đầu vào: 1->3->5, 2->4->5
 
-输出：1->2->3->4->5->5
+Đầu ra: 1->2->3->4->5->5
 ```
 
 ### Cách giải
@@ -2483,7 +2483,7 @@ Nhập một cây nhị phân, biến đổi nó thành ảnh phản chiếu c�
 **Ví dụ**
 
 ```
-输入树：
+Cây đầu vào:
       8
      / \
     6  10
@@ -2491,7 +2491,7 @@ Nhập một cây nhị phân, biến đổi nó thành ảnh phản chiếu c�
   5  7 9 11
 
  [8,6,10,5,7,9,11,null,null,null,null,null,null,null,null]
-输出树：
+Cây đầu ra:
       8
      / \
     10  6
@@ -2542,14 +2542,14 @@ Nếu một cây nhị phân giống với ảnh phản chiếu của nó thì n
 **Ví dụ**
 
 ```
-如下图所示二叉树[1,2,2,3,4,4,3,null,null,null,null,null,null,null,null]为对称二叉树：
+Cây nhị phân [1,2,2,3,4,4,3,null,null,null,null,null,null,null,null] trong hình dưới là cây đối xứng:
     1
    / \
   2   2
  / \ / \
 3  4 4  3
 
-如下图所示二叉树[1,2,2,null,4,4,3,null,null,null,null,null,null]不是对称二叉树：
+Cây nhị phân [1,2,2,null,4,4,3,null,null,null,null,null,null] trong hình dưới không phải là cây đối xứng:
     1
    / \
   2   2
@@ -2599,14 +2599,14 @@ Nhập một ma trận, lần lượt in từng số theo thứ tự chiều kim
 **Ví dụ**
 
 ```
-输入：
+Đầu vào:
 [
   [1, 2, 3, 4],
   [5, 6, 7, 8],
   [9,10,11,12]
 ]
 
-输出：[1,2,3,4,8,12,11,10,9,5,6,7]
+Đầu ra: [1,2,3,4,8,12,11,10,9,5,6,7]
 ```
 
 ### Cách giải
@@ -2757,10 +2757,10 @@ Lưu ý: nếu hai dãy đều rỗng hoặc có độ dài khác nhau thì xem 
 **Ví dụ**
 
 ```
-输入：[1,2,3,4,5]
+Đầu vào: [1,2,3,4,5]
       [4,5,3,2,1]
 
-输出：true
+Đầu ra: true
 ```
 
 ### Cách giải
@@ -3974,14 +3974,14 @@ Nhập hai linked list, tìm node chung đầu tiên của chúng.
 **Ví dụ**
 
 ```
-给出两个链表如下所示：
+Cho hai linked list như sau:
 A：        a1 → a2
                    ↘
                      c1 → c2 → c3
                    ↗
 B:     b1 → b2 → b3
 
-输出第一个公共节点c1
+Đầu ra là node chung đầu tiên c1
 ```
 
 ### Cách giải
@@ -4058,9 +4058,9 @@ Ví dụ nhập mảng đã sắp xếp `[1, 2, 3, 3, 3, 3, 4, 5]` và số 3; v
 **Ví dụ**
 
 ```
-输入：[1, 2, 3, 3, 3, 3, 4, 5] ,  3
+Đầu vào: [1, 2, 3, 3, 3, 3, 4, 5], 3
 
-输出：4
+Đầu ra: 4
 ```
 
 ### Cách giải
@@ -4151,9 +4151,9 @@ Trong phạm vi `0` đến `n-1` có `n` số, đúng một số không nằm tr
 **Ví dụ**
 
 ```
-输入：[0,1,2,4]
+Đầu vào: [0,1,2,4]
 
-输出：3
+Đầu ra: 3
 ```
 
 ### Cách giải
@@ -4162,7 +4162,7 @@ Tìm số đầu tiên không tương ứng với chỉ số.
 
 Trường hợp đặc biệt:
 
-- Nếu mọi chỉ số đều tương ứng thì cần trả về `最后一个数+1`;
+- Nếu mọi chỉ số đều tương ứng thì cần trả về `giá trị cuối cùng+1`;
 - Nếu số bị thiếu là số đầu tiên thì trả về 0.
 
 ```java
@@ -4211,9 +4211,9 @@ Ví dụ, trong mảng `[-3, -1, 1, 3, 5]`, số 3 bằng với chỉ số của
 **Ví dụ**
 
 ```
-输入：[-3, -1, 1, 3, 5]
+Đầu vào: [-3, -1, 1, 3, 5]
 
-输出：3
+Đầu ra: 3
 ```
 
 **Lưu ý**: nếu không tồn tại thì trả về -1.
@@ -4268,14 +4268,14 @@ Các node lần lượt đi qua từ node gốc đến node lá (bao gồm node 
 **Ví dụ**
 
 ```
-输入：二叉树[8, 12, 2, null, null, 6, 4, null, null, null, null]如下图所示：
+Đầu vào: cây nhị phân [8, 12, 2, null, null, 6, 4, null, null, null, null] như hình dưới:
     8
    / \
   12  2
      / \
     6   4
 
-输出：3
+Đầu ra: 3
 ```
 
 ### Cách giải
@@ -4332,14 +4332,14 @@ Nếu độ sâu cây con trái và cây con phải của mọi node bất kỳ 
 **Ví dụ**
 
 ```
-输入：二叉树[5,7,11,null,null,12,9,null,null,null,null]如下所示，
+Đầu vào: cây nhị phân [5,7,11,null,null,12,9,null,null,null,null] như sau,
     5
    / \
   7  11
     /  \
    12   9
 
-输出：true
+Đầu ra: true
 ```
 
 ### Cách giải
@@ -4448,9 +4448,9 @@ Có thể giả định hai số này chắc chắn tồn tại.
 **Ví dụ**
 
 ```
-输入：[1,2,3,3,4,4]
+Đầu vào: [1,2,3,3,4,4]
 
-输出：[1,2]
+Đầu ra: [1,2]
 ```
 
 ### Cách giải
@@ -4576,9 +4576,9 @@ Có thể cho rằng mỗi bộ đầu vào đều chứa ít nhất một kết
 **Ví dụ**
 
 ```
-输入：[1,2,3,4] , sum=7
+Đầu vào: [1,2,3,4], sum=7
 
-输出：[3,4]
+Đầu ra: [3,4]
 ```
 
 ### Cách giải
@@ -4627,9 +4627,9 @@ Ví dụ nhập 15, vì `1+2+3+4+5=4+5+6=7+8=15`, nên kết quả in ra 3 dãy 
 **Ví dụ**
 
 ```
-输入：15
+Đầu vào: 15
 
-输出：[[1,2,3,4,5],[4,5,6],[7,8]]
+Đầu ra: [[1,2,3,4,5],[4,5,6],[7,8]]
 ```
 
 ### Cách giải
@@ -4700,9 +4700,9 @@ Ví dụ nhập chuỗi `"I am a student."` thì xuất `"student. a am I"`.
 **Ví dụ**
 
 ```
-输入："I am a student."
+Đầu vào: "I am a student."
 
-输出："student. a am I"
+Đầu ra: "student. a am I"
 ```
 
 ### Cách giải
@@ -4756,9 +4756,9 @@ Ví dụ nhập chuỗi `"abcdefg"` và số 2, hàm sẽ trả về kết quả
 **Ví dụ**
 
 ```
-输入："abcdefg" , n=2
+Đầu vào: "abcdefg", n=2
 
-输出："cdefgab"
+Đầu ra: "cdefgab"
 ```
 
 ### Cách giải
@@ -4818,9 +4818,9 @@ Ví dụ, nếu mảng đầu vào là `[2, 3, 4, 2, 6, 2, 5, 1]` và kích thư
 **Ví dụ**
 
 ```
-输入：[2, 3, 4, 2, 6, 2, 5, 1] , k=3
+Đầu vào: [2, 3, 4, 2, 6, 2, 5, 1], k=3
 
-输出: [4, 4, 6, 6, 6, 5]
+Đầu ra: [4, 4, 6, 6, 6, 5]
 ```
 
 ### Cách giải
@@ -4904,17 +4904,17 @@ Rút ngẫu nhiên `5` lá bài từ bộ bài, phán đoán có phải là mộ
 **Ví dụ 1**
 
 ```
-输入：[8,9,10,11,12]
+Đầu vào: [8,9,10,11,12]
 
-输出：true
+Đầu ra: true
 ```
 
 **Ví dụ 2**
 
 ```
-输入：[0,8,9,11,12]
+Đầu vào: [0,8,9,11,12]
 
-输出：true
+Đầu ra: true
 ```
 
 ### Cách giải
@@ -4977,9 +4977,9 @@ Hãy tìm số cuối cùng còn lại trong vòng tròn.
 **Ví dụ**
 
 ```
-输入：n=5 , m=3
+Đầu vào: n=5, m=3
 
-输出：3
+Đầu ra: 3
 ```
 
 ### Cách giải
@@ -5139,9 +5139,9 @@ Nếu có thể mua khi giá là 5 và bán khi giá là 16 thì có thể nhậ
 **Ví dụ**
 
 ```
-输入：[9, 11, 8, 5, 7, 12, 16, 14]
+Đầu vào: [9, 11, 8, 5, 7, 12, 16, 14]
 
-输出：11
+Đầu ra: 11
 ```
 
 ### Cách giải
@@ -5177,14 +5177,14 @@ Nguồn: [AcWing](https://www.acwing.com/problem/content/15/)
 
 ### Mô tả bài toán
 
-Tính `1+2+…+n`, yêu cầu không được sử dụng các từ khóa `乘除法、for、while、if、else、switch、case` và câu lệnh điều kiện `A?B:C`.
+Tính `1+2+…+n`, yêu cầu không được sử dụng các từ khóa `phép nhân và chia, for, while, if, else, switch, case` và câu lệnh điều kiện `A?B:C`.
 
 **Ví dụ**
 
 ```
-输入：10
+Đầu vào: 10
 
-输出：55
+Đầu ra: 55
 ```
 
 ### Cách giải
@@ -5220,9 +5220,9 @@ Viết một hàm tính tổng của hai số nguyên, yêu cầu trong thân h�
 **Ví dụ**
 
 ```
-输入：num1 = 1 , num2 = 2
+Đầu vào: num1 = 1, num2 = 2
 
-输出：3
+Đầu ra: 3
 ```
 
 ### Cách giải
@@ -5268,9 +5268,9 @@ Không được sử dụng phép chia.
 **Ví dụ**
 
 ```
-输入：[1, 2, 3, 4, 5]
+Đầu vào: [1, 2, 3, 4, 5]
 
-输出：[120, 60, 40, 30, 24]
+Đầu ra: [120, 60, 40, 30, 24]
 ```
 
 **Câu hỏi suy nghĩ:**

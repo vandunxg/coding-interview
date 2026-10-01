@@ -13,9 +13,9 @@ Hai quân A, B bị giới hạn di chuyển trong các ô `3*3` thuộc phía m
 Khung tổng quát của chương trình như sau:
 
 ```
-遍历 A 的位置
-    遍历 B 的 位置
-        判断 A、B 的位置组合是否满足要求，若满足，则输出。
+Duyệt qua các vị trí của A
+    Duyệt qua các vị trí của B
+        Kiểm tra tổ hợp vị trí của A và B có đáp ứng yêu cầu hay không; nếu đáp ứng thì xuất ra.
 ```
 
 Điểm khó của bài toán là làm thế nào chỉ dùng một biến để triển khai.

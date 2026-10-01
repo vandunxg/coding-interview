@@ -25,10 +25,10 @@ Rốt cuộc đã xảy ra chuyện gì?
 Bài toán này không đơn giản nhưng vô cùng thú vị; một khi biết đáp án, bạn lại thấy nó không quá khó. Đây không phải kiểu câu hỏi vô lý, muốn giải được cần một chút suy luận logic, vì vậy đừng cố giải ngay. Hãy dành 2 phút tự suy nghĩ trước.
 
 ```
-if ((思考时间 > 2 分钟) || (已经知道答案了吗)) {
-    跳转至下一段
+if ((thời gian suy nghĩ > 2 phút) || (đã biết đáp án chưa)) {
+    chuyển đến đoạn tiếp theo
 } else {
-    返回上一段，并至少思考 2 分钟
+    quay lại đoạn trước và suy nghĩ ít nhất 2 phút
 }
 ```
 
@@ -59,7 +59,7 @@ int res = 5050;
 for (int i = 0; i < 99; ++i) {
     res -= item[i];
 }
-System.out.println("最后剩下的数是：" + res);
+System.out.println("Số còn lại cuối cùng là: " + res);
 ```
 
 Nếu cộng 100 giá trị trong tập hợp, ta được 5050. Lần lượt lấy 99 giá trị trong mảng trừ khỏi 5050, số cuối cùng chính là giá trị còn lại chưa được lưu vào mảng. Có lẽ nhiều độc giả đã nghĩ đến một thuật toán tương tự. Ngay cả khi chưa tìm ra đáp án đúng cũng đừng thất vọng, bởi những người thực sự nên thất vọng là những người sau khi không tìm được đáp án đã dễ dàng bỏ cuộc và muốn xem ngay đáp án đúng.

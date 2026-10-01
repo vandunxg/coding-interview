@@ -32,7 +32,6 @@ async function markdownFiles(directory, relative = '') {
 for (const relativeFile of await markdownFiles(docsRoot)) {
   const lines = (await readFile(path.join(docsRoot, relativeFile), 'utf8')).split('\n')
   let inFence = false
-  let inBlockComment = false
 
   for (const [index, line] of lines.entries()) {
     if (/^\s*```/.test(line)) {
@@ -42,15 +41,9 @@ for (const relativeFile of await markdownFiles(docsRoot)) {
 
     if (!inFence) continue
 
-    const isComment = inBlockComment
-      || /^\s*(?:\/\/|\/\*|#)/.test(line)
-      || line.includes('//')
-    if (hanCharacters.test(line) && isComment) {
+    if (hanCharacters.test(line)) {
       violations.push(`${path.join('docs/vi', relativeFile)}:${index + 1}`)
     }
-
-    if (/\/\*/.test(line) && !/\*\//.test(line)) inBlockComment = true
-    if (/\*\//.test(line)) inBlockComment = false
   }
 }
 
@@ -61,9 +54,9 @@ if (!interviewMirror.includes('./images/odd-even.svg')) {
 }
 
 if (violations.length > 0) {
-  console.error('Han characters remain in Vietnamese code comments:')
+  console.error('Han characters remain in Vietnamese mirrors:')
   for (const violation of violations) console.error(`- ${violation}`)
   process.exit(1)
 }
 
-console.log('Validated English code comments in Vietnamese mirrors.')
+console.log('Validated Vietnamese mirrors contain no Han characters.')
