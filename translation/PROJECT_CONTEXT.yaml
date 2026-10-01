@@ -29,14 +29,14 @@ modules:
     - translation/workflows/translation.md
 policies:
   fidelity: faithful
-  code_comments: preserve # preserve | translate_explanatory
+  code_comments: translate_explanatory # preserve | translate_explanatory
   display_strings: preserve # preserve | scoped_allowlist
   string_allowlist: [] # Locator, allowed change, reason, approval reference.
   inline_literals: preserve
   markup_text_allowlist: [] # Display frontmatter fields/attributes with exact scope; not technical keys.
   internal_links: verified_mapping # Preserve destination semantics, not blindly the path string.
   external_links: preserve
-  image_text: preserve_and_report # preserve_and_report | localize_verified_copy
+  image_text: localize_verified_copy # preserve_and_report | localize_verified_copy
   terminology: english_first_by_meaning
   translator_additions: disallow_in_translation
   language_exceptions: [] # Exact locator, token/category, reason, approval reference.

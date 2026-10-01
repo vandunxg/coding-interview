@@ -15,7 +15,8 @@
     "docs:preview": "vitepress preview docs",
     "docs:typecheck": "vue-tsc --noEmit",
     "docs:check-translations": "node scripts/check-translations.mjs",
-    "docs:check-deployment": "node scripts/check-deployment.mjs"
+    "docs:check-deployment": "node scripts/check-deployment.mjs",
+    "docs:check-localization": "node scripts/check-localization.mjs"
   },
   "dependencies": {
     "vitepress-plugin-comment-with-giscus": "^1.1.15"

@@ -32,6 +32,9 @@ jobs:
       - name: Check translation mirrors
         run: pnpm run docs:check-translations
 
+      - name: Check localized comments and assets
+        run: pnpm run docs:check-localization
+
       - name: Build with VitePress
         run: pnpm run docs:build
 

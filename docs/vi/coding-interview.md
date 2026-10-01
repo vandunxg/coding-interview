@@ -36,15 +36,15 @@ Có thể đối chiếu với phần code bên dưới để hiểu rõ hơn.
 class Solution {
 
     /**
-     * 查找数组中的重复元素
+     * Find a duplicate in the array
      *
-     * @param nums 数组
-     * @return 其中一个重复的元素
+     * @param nums array
+     * @return one of the duplicate elements
      */
     public int duplicateInArray(int[] nums) {
         int n = nums.length;
 
-        // 若存在数组元素不在[0, n-1] 的范围内，直接返回-1
+        // If an array element is outside the range [0, n-1], return -1 directly
         for (int num : nums) {
             if (num < 0 || num >= n) {
                 return -1;
@@ -54,7 +54,7 @@ class Solution {
         for (int i = 0; i < n; ++i) {
             while (nums[i] != i) {
                 if (nums[i] == nums[nums[i]]) {
-                    // 说明位置i与位置nums[i]上的元素相同，直接返回该重复元素
+                    // The elements at positions i and nums[i] are equal; return the duplicate directly
                     return nums[i];
                 }
                 swap(nums, i, nums[i]);
@@ -110,10 +110,10 @@ Lưu ý, phương pháp này không thể tìm ra tất cả các phần tử tr
 class Solution {
 
     /**
-     * 不修改数组查找重复的元素，没有则返回0
+     * Find a duplicate without modifying the array; return 0 if none exists
      *
-     * @param nums 数组
-     * @return 重复的元素
+     * @param nums array
+     * @return the duplicate element
      */
     public int duplicateInArray(int[] nums) {
         if (nums == null || nums.length < 2) {
@@ -125,7 +125,7 @@ class Solution {
             int cnt = getCountRange(nums, start, mid);
             if (start == end) {
                 if (cnt > 1) {
-                    // 找到重复的数字
+                    // Found the duplicate number
                     return start;
                 }
                 break;
@@ -140,12 +140,12 @@ class Solution {
     }
 
     /**
-     * 计算整个数组中有多少个数的取值在[from, to] 之间
+     * Count how many values in the entire array are in the range [from, to]
      *
-     * @param nums 数组
-     * @param from 左边界
-     * @param to 右边界
-     * @return 数量
+     * @param nums array
+     * @param from left boundary
+     * @param to right boundary
+     * @return the count
      */
     private int getCountRange(int[] nums, int from, int to) {
         int cnt = 0;
@@ -202,11 +202,11 @@ Lưu ý, không thể chọn số ở góc trên bên trái hoặc góc dưới 
 class Solution {
 
     /**
-     * 二维数组中的查找
+     * Search in a two-dimensional array
      *
-     * @param array 二维数组
-     * @param target 要查找的值
-     * @return 是否找到该值
+     * @param array two-dimensional array
+     * @param target value to find
+     * @return whether the value was found
      */
     public boolean searchArray(int[][] array, int target) {
         if (array == null || array.length < 1) {
@@ -258,10 +258,10 @@ Sử dụng regular expression để khớp và thay thế.
 class Solution {
 
     /**
-     * 将字符串中的所有空格替换为%20
+     * Replace all spaces in the string with %20
      *
-     * @param str 字符串
-     * @return 替换后的字符串
+     * @param str string
+     * @return the string after replacement
      */
     public String replaceSpaces(StringBuffer str) {
         return str == null ? null : str.toString().replaceAll(" ", "%20");
@@ -283,10 +283,10 @@ Khi hợp nhất hai mảng (bao gồm cả chuỗi), nếu sao chép từng s�
 class Solution {
 
     /**
-     * 将字符串中的所有空格替换为%20
+     * Replace all spaces in the string with %20
      *
-     * @param str 字符串
-     * @return 替换后的字符串
+     * @param str string
+     * @return the string after replacement
      */
     public String replaceSpaces(StringBuffer str) {
         if (str == null) {
@@ -349,10 +349,10 @@ Duyệt linked list, `push` giá trị của từng node vào stack, cuối cùn
 class Solution {
 
     /**
-     * 从尾到头打印链表
+     * Print the linked list from tail to head
      *
-     * @param head 链表头结点
-     * @return 结果数组
+     * @param head linked-list head node
+     * @return the result array
      */
     public int[] printListReversingly(ListNode head) {
         if (head == null) {
@@ -422,11 +422,11 @@ Lưu ý thêm các điều kiện `if` cho trường hợp đặc biệt.
 class Solution {
 
     /**
-     * 重建二叉树
+     * Rebuild a binary tree
      *
-     * @param preorder 前序遍历序列
-     * @param inorder 中序遍历序列
-     * @return 二叉树根结点
+     * @param preorder preorder traversal sequence
+     * @param inorder inorder traversal sequence
+     * @return binary tree root node
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || inorder == null || preorder.length == 0 || preorder.length != inorder.length) {
@@ -507,10 +507,10 @@ Với node `p`:
 class Solution {
 
     /**
-     * 获取二叉树中序遍历结点的下一个结点
+     * Get the next node in the binary tree's inorder traversal
      *
-     * @param p 某结点
-     * @return p的下一个结点
+     * @param p a node
+     * @return the next node after p
      */
     public TreeNode inorderSuccessor(TreeNode p) {
         if (p == null) {
@@ -519,7 +519,7 @@ class Solution {
 
         TreeNode cur = p.right;
 
-        // 右子树不为空
+        // The right subtree is not empty
         if (cur != null) {
             while (cur.left != null) {
                 cur = cur.left;
@@ -527,7 +527,7 @@ class Solution {
             return cur;
         }
 
-        // 右子树为空
+        // The right subtree is empty
         TreeNode father = p.father;
         while (father != null && father.left != p) {
             p = father;
@@ -748,10 +748,10 @@ Dùng đệ quy, ngắn gọn và dễ hiểu nhưng hiệu suất rất thấp 
 class Solution {
 
     /**
-     * 求斐波那契数列的第n项，n从0开始
+     * Get the nth Fibonacci number, with n starting at 0
      *
-     * @param n 第n项
-     * @return 第n项的值
+     * @param n term index
+     * @return value of the term
      */
     public int Fibonacci(int n) {
         if (n < 2) {
@@ -770,10 +770,10 @@ Tính từ dưới lên và dùng công thức truy hồi, độ phức tạp th
 class Solution {
 
     /**
-     * 求斐波那契数列的第n项，n从0开始
+     * Get the nth Fibonacci number, with n starting at 0
      *
-     * @param n 第n项
-     * @return 第n项的值
+     * @param n term index
+     * @return value of the term
      */
     public int Fibonacci(int n) {
         if (n < 2) {
@@ -810,10 +810,10 @@ f(n) = f(n-1) + f(n-2)
 class Solution {
 
     /**
-     * 青蛙跳台阶
+     * Frog jump steps
      *
-     * @param target 跳上的那一级台阶
-     * @return 多少种跳法
+     * @param target target step
+     * @return number of ways to jump
      */
     public int JumpFloor(int target) {
         if (target < 3) {
@@ -871,10 +871,10 @@ Vì vậy f(n) là một cấp số nhân
 class Solution {
 
     /**
-     * 青蛙跳台阶II
+     * Frog jump steps II
      *
-     * @param target 跳上的那一级台阶
-     * @return 多少种跳法
+     * @param target target step
+     * @return number of ways to jump
      */
     public int JumpFloorII(int target) {
         return (int) Math.pow(2, target - 1);
@@ -892,10 +892,10 @@ Mỗi khi tính res[i], cộng dồn toàn bộ các kết quả phía trước.
 class Solution {
 
     /**
-     * 青蛙跳台阶II
+     * Frog jump steps II
      *
-     * @param target 跳上的那一级台阶
-     * @return 多少种跳法
+     * @param target target step
+     * @return number of ways to jump
      */
     public int JumpFloorII(int target) {
         if (target < 3) {
@@ -934,10 +934,10 @@ Có thể dùng các hình chữ nhật nhỏ `2*1` đặt ngang hoặc dọc đ
 class Solution {
 
     /**
-     * 矩形覆盖
+     * Rectangle covering
      *
-     * @param target 2*target大小的矩形
-     * @return 多少种覆盖方法
+     * @param target rectangle of size 2*target
+     * @return number of covering methods
      */
     public int RectCover(int target) {
         if (target < 3) {
@@ -960,10 +960,10 @@ class Solution {
 class Solution {
 
     /**
-     * 矩形覆盖
+     * Rectangle covering
      *
-     * @param target 2*target大小的矩形
-     * @return 多少种覆盖方法
+     * @param target rectangle of size 2*target
+     * @return number of covering methods
      */
     public int RectCover(int target) {
         if (target < 3) {
@@ -1013,10 +1013,10 @@ Duyệt trực tiếp mảng để tìm giá trị nhỏ nhất, độ phức t�
 class Solution {
 
     /**
-     * 获取旋转数组的最小元素
+     * Get the minimum element of a rotated array
      *
-     * @param nums 旋转数组
-     * @return 数组中的最小值
+     * @param nums rotated array
+     * @return minimum value in the array
      */
     public int findMin(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -1055,10 +1055,10 @@ Tính con trỏ giữa `mid`:
 class Solution {
 
     /**
-     * 获取旋转数组的最小元素
+     * Get the minimum element of a rotated array
      *
-     * @param nums 旋转数组
-     * @return 数组中的最小值
+     * @param nums rotated array
+     * @return minimum value in the array
      */
     public int findMin(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -1067,13 +1067,13 @@ class Solution {
         int start = 0, end = nums.length - 1;
 
         if (nums[start] < nums[end]) {
-            // 说明这是一个单调递增数组
+            // This is a monotonically increasing array
             return nums[start];
         }
         while (end - start > 1) {
             int mid = start + ((end - start) >> 1);
             if (nums[start] == nums[end] && nums[mid] == nums[start]) {
-                // 三个数都相等，只能在[start, end)区间遍历，找出最小值
+                // All three values are equal; scan the range [start, end) to find the minimum
                 return findMin(nums, start, end);
             }
             if (nums[mid] >= nums[start]) {
@@ -1135,11 +1135,11 @@ Phương pháp quay lui. Trước hết, chọn tùy ý một ô làm điểm b�
 class Solution {
 
     /**
-     * 判断矩阵中是否包含某条路径
+     * Determine whether the matrix contains a path
      *
-     * @param matrix 矩阵
-     * @param str 路径
-     * @return 是否包含某条路径
+     * @param matrix matrix
+     * @param str path
+     * @return whether the matrix contains a path
      */
     public boolean hasPath(char[][] matrix, String str) {
         if (matrix ==  null || matrix.length == 0 || str == null) {
@@ -1230,12 +1230,12 @@ Bắt đầu di chuyển từ tọa độ (0, 0). Khi chuẩn bị đi vào tọ
 class Solution {
 
     /**
-     * 计算能到达的格子数
+     * Count the number of reachable cells
      *
-     * @param threshold 限定的数字
-     * @param rows 行数
-     * @param cols 列数
-     * @return 能到达的格子数
+     * @param threshold threshold value
+     * @param rows number of rows
+     * @param cols number of columns
+     * @return number of reachable cells
      */
     public int movingCount(int threshold, int rows, int cols) {
         boolean[][] visited = new boolean[rows][cols];
@@ -1307,10 +1307,10 @@ f(n) = max{f(n), f(i) * f(n - i)}, i = 1,2..n-1
 class Solution {
 
     /**
-     * 剪绳子求最大乘积
+     * Get the maximum product after cutting the rope
      *
-     * @param length 绳子长度
-     * @return 乘积最大值
+     * @param length rope length
+     * @return maximum product
      */
     public int maxProductAfterCutting(int length) {
         if (length < 4) {
@@ -1350,10 +1350,10 @@ Chiến lược tham lam:
 class Solution {
 
     /**
-     * 剪绳子求最大乘积
+     * Get the maximum product after cutting the rope
      *
-     * @param length 绳子长度
-     * @return 乘积最大值
+     * @param length rope length
+     * @return maximum product
      */
     public int maxProductAfterCutting(int length) {
         if (length < 4) {
@@ -1413,10 +1413,10 @@ Không được dịch phải n rồi thực hiện phép AND với 1, vì n có
 class Solution {
 
     /**
-     * 求二进制中1的个数
+     * Count the number of 1s in the binary representation
      *
-     * @param n 整数
-     * @return 该整数的二进制中1的个数
+     * @param n integer
+     * @return number of 1s in the integer's binary representation
      */
     public int NumberOf1(int n) {
         int i = 1;
@@ -1454,10 +1454,10 @@ n & (n - 1) = 1000
 class Solution {
 
     /**
-     * 求二进制中1的个数
+     * Count the number of 1s in the binary representation
      *
-     * @param n 整数
-     * @return 该整数的二进制中1的个数
+     * @param n integer
+     * @return number of 1s in the integer's binary representation
      */
     public int NumberOf1(int n) {
         int cnt = 0;
@@ -1478,10 +1478,10 @@ Dùng Java API.
 class Solution {
 
     /**
-     * 求二进制中1的个数
+     * Count the number of 1s in the binary representation
      *
-     * @param n 整数
-     * @return 该整数的二进制中1的个数
+     * @param n integer
+     * @return number of 1s in the integer's binary representation
      */
     public int NumberOf1(int n) {
         return Integer.bitCount(n);
@@ -1531,11 +1531,11 @@ Lưu ý kiểm tra xem số mũ có nhỏ hơn 0 hay không. Ngoài ra, lũy th�
 class Solution {
 
     /**
-     * 计算数值的整数次方
+     * Compute an integer power of a value
      *
-     * @param base 底数
-     * @param exponent 指数
-     * @return 数值的整数次方
+     * @param base base value
+     * @param exponent exponent
+     * @return integer power of the value
      */
     public double Power(double base, int exponent) {
         if (exponent == 0) {
@@ -1557,7 +1557,7 @@ class Solution {
 
 #### Cách giải hai
 
-![odd-even](../images/odd-even.png)
+![odd-even](./images/odd-even.svg)
 
 Giải bằng đệ quy, mỗi lần số mũ giảm đi một nửa, độ phức tạp thời gian là `O(log N)`.
 
@@ -1565,11 +1565,11 @@ Giải bằng đệ quy, mỗi lần số mũ giảm đi một nửa, độ ph�
 class Solution {
 
     /**
-     * 计算数值的整数次方
+     * Compute an integer power of a value
      *
-     * @param base 底数
-     * @param exponent 指数
-     * @return 数值的整数次方
+     * @param base base value
+     * @param exponent exponent
+     * @return integer power of the value
      */
     public double Power(double base, int exponent) {
         if (exponent == 0) {
@@ -1610,9 +1610,9 @@ Cần lưu ý số có n chữ số có thể vượt quá phạm vi biểu di�
 class Solution {
 
     /**
-     * 打印从1到最大的n位数
+     * Print numbers from 1 to the largest n-digit number
      *
-     * @param n n位数
+     * @param n number of digits
      */
     public void print1ToMaxOfNDigits(int n) {
         if (n < 1) {
@@ -1627,9 +1627,9 @@ class Solution {
 
 
     /**
-     * 打印字符数组表示的数字（需要省略前n个0）
+     * Print the number represented by the character array (omit leading zeros)
      *
-     * @param chars 字符数组
+     * @param chars character array
      */
     private void printNumber(char[] chars) {
         int i = 0, n = chars.length;
@@ -1673,9 +1673,9 @@ Dùng đệ quy để sinh tất cả hoán vị, thiết lập từng chữ s�
 class Solution {
 
     /**
-     * 打印从1到最大的n位数
+     * Print numbers from 1 to the largest n-digit number
      *
-     * @param n n位数
+     * @param n number of digits
      */
     public void print1ToMaxOfNDigits(int n) {
         if (n < 1) {
@@ -1691,7 +1691,7 @@ class Solution {
             return;
         }
 
-        // 每一位分别设置从0到9
+        // Set each digit from 0 to 9
         for (int j = 0; j < 10; ++j) {
             chars[i] = (char) (j + '0');
             print1ToMaxOfNDigits(chars, n, i + 1);
@@ -1700,9 +1700,9 @@ class Solution {
 
 
     /**
-     * 打印字符数组表示的数字（需要省略前n个0）
+     * Print the number represented by the character array (omit leading zeros)
      *
-     * @param chars 字符数组
+     * @param chars character array
      */
     private void printNumber(char[] chars) {
         int i = 0, n = chars.length;
@@ -1760,9 +1760,9 @@ Kiểm tra node cần xóa có phải node cuối hay không:
 class Solution {
 
     /**
-     * 删除链表的节点
+     * Delete a node from the linked list
      *
-     * @param node 要删除的节点
+     * @param node node to delete
      */
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
@@ -1811,10 +1811,10 @@ Trong một linked list đã sắp xếp có các node trùng lặp, hãy xóa c
 class Solution {
 
     /**
-     * 删除链表重复的节点
+     * Delete duplicate nodes from the linked list
      *
-     * @param head 链表头节点
-     * @return 删除重复节点后的链表
+     * @param head linked-list head node
+     * @return linked list after removing duplicate nodes
      */
     public ListNode deleteDuplication(ListNode head) {
         if (head == null || head.next == null) {
@@ -1852,10 +1852,10 @@ pre luôn trỏ tới node không trùng lặp tiếp theo.
 class Solution {
 
     /**
-     * 删除链表重复的节点
+     * Delete duplicate nodes from the linked list
      *
-     * @param head 链表头节点
-     * @return 删除重复节点后的链表
+     * @param head linked-list head node
+     * @return linked list after removing duplicate nodes
      */
     public ListNode deleteDuplication(ListNode head) {
         if (head == null || head.next == null) {
@@ -1924,11 +1924,11 @@ Kiểm tra xem ký tự thứ hai trong pattern có phải `*` hay không:
 class Solution {
 
     /**
-     * 判断字符串是否与模式串匹配
+     * Determine whether the string matches the pattern
      *
-     * @param s 字符串
-     * @param p 模式串
-     * @return 是否匹配
+     * @param s string
+     * @param p pattern
+     * @return whether the string matches
      */
     public boolean isMatch(String s, String p) {
         if (s == null || p == null) {
@@ -1944,8 +1944,8 @@ class Solution {
             return true;
         }
 
-        // pattern已经走到最后，而str还有未匹配的
-        // str走到最后，而pattern还没走完，此时是允许的
+        // The pattern has ended, but str still has unmatched characters
+        // str has ended while the pattern has not, which is allowed here
         if (j == len2) {
             return false;
         }
@@ -2014,7 +2014,7 @@ Chỉ cần dùng regular expression để khớp.
 ```java
 public class Solution {
     /**
-     * 判断是否是数字
+     * Determine whether the value is numeric
      * @param str
      * @return
      */
@@ -2045,8 +2045,9 @@ import java.util.Arrays;
 
 public class Solution {
     /**
-     * 调整数组元素顺序，使得奇数元素位于偶数元素前面，且保证奇数和奇数，偶数和偶数之间的相对位置不变。
-     * @param array 数组
+     * Reorder the array so odd elements precede even elements while preserving
+     * the relative order among odd elements and among even elements.
+     * @param array array
      */
     public void reOrderArray(int [] array) {
         if (array == null || array.length < 2) {
@@ -2120,10 +2121,10 @@ public class ListNode {
 }*/
 public class Solution {
     /**
-     * 找出链表倒数第k个节点，k从1开始
-     * @param head 链表头部
-     * @param k 第k个节点
-     * @return 倒数第k个节点
+     * Find the kth node from the end of the linked list, with k starting at 1
+     * @param head linked-list head
+     * @param k node position
+     * @return kth node from the end
      */
     public ListNode FindKthToTail(ListNode head,int k) {
         if (head == null || k < 1) {
@@ -2177,9 +2178,9 @@ Cho một linked list; nếu trong đó có vòng, hãy tìm node đầu vào c�
 public class Solution {
 
     /**
-     * 求链表环的入口，若没有环，返回null
-     * @param pHead 链表头
-     * @return 环的入口点
+     * Find the entry point of a linked-list loop; return null if there is no loop
+     * @param pHead linked-list head
+     * @return loop entry point
      */
     public ListNode EntryNodeOfLoop(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
@@ -2197,26 +2198,26 @@ public class Solution {
             }
         }
 
-        // 快指针与慢指针没有相遇，说明无环，返回 null
+        // The fast and slow pointers did not meet, so there is no loop; return null
         if (!flag) {
             return null;
         }
 
         ListNode cur = slow.next;
-        // 求出环中结点个数
+        // Count the nodes in the loop
         int cnt = 1;
         while (cur != slow) {
             cur = cur.next;
             ++cnt;
         }
 
-        // 指针p1先走cnt步
+        // Move pointer p1 forward by cnt steps first
         ListNode p1 = pHead;
         for (int i = 0; i < cnt; ++i) {
             p1 = p1.next;
         }
 
-        // p2指向链表头，然后p1/p2同时走，首次相遇的地方就是环的入口
+        // Point p2 to the list head, then move p1 and p2 together; their first meeting point is the loop entry
         ListNode p2 = pHead;
         while (p1 != p2) {
             p1 = p1.next;
@@ -2775,10 +2776,10 @@ import java.util.Stack;
 
 public class Solution {
     /**
-     * 判断是否是弹出序列
-     * @param pushA 压栈序列
-     * @param popA 弹栈序列
-     * @return 是否是弹出序列
+     * Determine whether this is a valid pop sequence
+     * @param pushA push sequence
+     * @param popA pop sequence
+     * @return whether this is a valid pop sequence
      */
     public boolean IsPopOrder(int[] pushA,int[] popA) {
         if (pushA == null || popA == null || pushA.length != popA.length) {
@@ -2843,9 +2844,9 @@ import java.util.Queue;
  */
 public class Solution {
     /**
-     * 从上到下打印二叉树
-     * @param root 二叉树根节点
-     * @return 结果list
+     * Print the binary tree from top to bottom
+     * @param root binary tree root node
+     * @return result list
      */
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -2902,9 +2903,9 @@ public class TreeNode {
 */
 public class Solution {
     /**
-     * 把二叉树打印成多行
-     * @param pRoot 二叉树根节点
-     * @return 结果list
+     * Print the binary tree on multiple lines
+     * @param pRoot binary tree root node
+     * @return result list
      */
     ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
@@ -2995,9 +2996,9 @@ public class TreeNode {
 */
 public class Solution {
     /**
-     * 按之字形打印二叉树
-     * @param pRoot 二叉树的根节点
-     * @return 结果list
+     * Print the binary tree in zigzag order
+     * @param pRoot binary tree root node
+     * @return result list
      */
     public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
@@ -3061,10 +3062,10 @@ Trong dãy, tìm từ trái sang phải cây con trái của node gốc (nhỏ h
 ```java
 public class Solution {
     /**
-     * 判断数组是否是某个二叉搜索树的后序遍历序列
+     * Determine whether the array is a postorder traversal sequence of a binary search tree
      *
-     * @param sequence 数组
-     * @return 是否属于某二叉搜索树的后序遍历序列
+     * @param sequence array
+     * @return whether it is a postorder traversal sequence of a binary search tree
      */
     public boolean VerifySquenceOfBST(int[] sequence) {
         if (sequence == null || sequence.length < 1) {
@@ -3129,11 +3130,11 @@ public class Solution {
     private ArrayList<ArrayList<Integer>> res = new ArrayList<>();
 
     /**
-     * 找出二叉树中和为某一值的路径（必须从根节点到叶节点）
+     * Find paths in the binary tree with a given sum (must run from root to leaf)
      *
-     * @param root  二叉树的根结点
-     * @param target 目标值
-     * @return 结果list
+     * @param root binary tree root node
+     * @param target target value
+     * @return result list
      */
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
         findPath(root, target, new ArrayList<>());
@@ -3192,9 +3193,9 @@ public class RandomListNode {
 */
 public class Solution {
     /**
-     * 复杂链表的复制
-     * @param pHead 链表头结点
-     * @return 复制的链表
+     * Copy a complex linked list
+     * @param pHead linked-list head node
+     * @return copied linked list
      */
     public RandomListNode Clone(RandomListNode pHead) {
         if (pHead == null) {
@@ -3266,7 +3267,7 @@ import java.util.Stack;
  */
 public class Solution {
     /**
-     * 将二叉搜索树转换为双向链表
+     * Convert a binary search tree to a doubly linked list
      *
      * @param pRootOfTree
      * @return
@@ -3330,10 +3331,10 @@ Xét chỉ số `index` của số được chọn:
 
 public class Solution {
     /**
-     * 查找数组中出现次数超过一次的数字
+     * Find a number that appears more than half the time in the array
      *
-     * @param array 数组
-     * @return 返回该数，不存在则返回0
+     * @param array array
+     * @return the number, or 0 if none exists
      */
     public int MoreThanHalfNum_Solution(int[] array) {
         if (array == null || array.length == 0) {
@@ -3356,11 +3357,11 @@ public class Solution {
     }
 
     /**
-     * 快排中的 partition 方法
+     * Partition method used by quicksort
      *
-     * @param array 数组
-     * @param start 开始位置
-     * @param end 结束位置
+     * @param array array
+     * @param start start position
+     * @param end end position
      * @return
      */
     private int partition(int[] array, int start, int end) {
@@ -3383,10 +3384,10 @@ public class Solution {
     }
 
     /**
-     * 判断val元素是否真的超过数组元素个数的一半
+     * Determine whether val really occurs more than half the number of array elements
      *
-     * @param array 数组
-     * @param val 某元素
+     * @param array array
+     * @param val an element
      * @return boolean
      */
     private boolean isMoreThanHalf(int[] array, int val) {
@@ -3411,10 +3412,10 @@ Dùng thuật toán bỏ phiếu đa số, duyệt mảng từ đầu đến cu�
 ```java
 public class Solution {
     /**
-     * 查找数组中出现次数超过一次的数字
+     * Find a number that appears more than half the time in the array
      *
-     * @param array 数组
-     * @return 返回该数，不存在则返回0
+     * @param array array
+     * @return the number, or 0 if none exists
      */
     public int MoreThanHalfNum_Solution(int[] array) {
         if (array == null || array.length == 0) {
@@ -3439,10 +3440,10 @@ public class Solution {
 
 
     /**
-     * 判断val元素是否真的超过数组元素个数的一半
+     * Determine whether val really occurs more than half the number of array elements
      *
-     * @param array 数组
-     * @param val 某元素
+     * @param array array
+     * @param val an element
      * @return boolean
      */
     private boolean isMoreThanHalf(int[] array, int val) {
@@ -3488,11 +3489,11 @@ import java.util.ArrayList;
 public class Solution {
 
     /**
-     * 获取数组中最小的k个数
+     * Get the k smallest numbers in the array
      *
-     * @param input 输入的数组
-     * @param k 元素个数
-     * @return 最小的k的数列表
+     * @param input input array
+     * @param k number of elements
+     * @return list of the k smallest numbers
      */
     public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
         ArrayList<Integer> res = new ArrayList<>();
@@ -3553,11 +3554,11 @@ import java.util.PriorityQueue;
 public class Solution {
 
     /**
-     * 获取数组中最小的k个数
+     * Get the k smallest numbers in the array
      *
-     * @param input 输入的数组
-     * @param k 元素个数
-     * @return 最小的k的数列表
+     * @param input input array
+     * @param k number of elements
+     * @return list of the k smallest numbers
      */
     public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
         ArrayList<Integer> res = new ArrayList<>();
@@ -3606,9 +3607,9 @@ public class Solution {
     private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
     /**
-     * 插入一个数
+     * Insert a number
      *
-     * @param num 数
+     * @param num number
      */
     public void Insert(Integer num) {
 
@@ -3627,9 +3628,9 @@ public class Solution {
     }
 
     /**
-     * 获取中位数
+     * Get the median
      *
-     * @return 中位数
+     * @return median
      */
     public Double GetMedian() {
         int size1 = maxHeap.size();
@@ -3669,10 +3670,10 @@ res[i] biểu thị tổng lớn nhất của mảng con kết thúc tại số 
 ```java
 public class Solution {
     /**
-     * 求连续子数组的最大和
+     * Find the maximum sum of a contiguous subarray
      *
-     * @param array 数组
-     * @return 最大和
+     * @param array array
+     * @return maximum sum
      */
     public int FindGreatestSumOfSubArray(int[] array) {
         int n = array.length;
@@ -3709,10 +3710,10 @@ Lấy một ví dụ, tìm chữ số ở vị trí 1001 của dãy.
 ```java
 public class Solution {
     /**
-     * 求数字序列中某一位的数字
+     * Find the digit at a given position in the number sequence
      *
-     * @param n 第n位
-     * @return 第n位的数字
+     * @param n position
+     * @return digit at position n
      */
     public int digitAtIndex(int n) {
         if (n < 0) {
@@ -3773,10 +3774,10 @@ import java.util.Arrays;
 class Solution {
 
     /**
-     * 打印数组元素组成的最小的数字
+     * Print the smallest number formed by the array elements
      *
-     * @param nums 数组
-     * @return 最小的数字
+     * @param nums array
+     * @return smallest number
      */
     public String printMinNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -3823,10 +3824,10 @@ Trước hết viết công thức truy hồi, trong đó res biểu thị tổn
 ```java
 class Solution {
     /**
-     * 获取翻译字符串的方法个数
+     * Get the number of ways to translate the string
      *
-     * @param s 字符串
-     * @return 个数
+     * @param s string
+     * @return number of ways
      */
     public int getTranslationCount(String s) {
         if (s == null || s.length() < 2) {
@@ -3873,10 +3874,10 @@ res[i][j] = Math.max(res[i - 1][j], res[i][j - 1]) + grid[i][j];
 ```java
 class Solution {
     /**
-     * 获取礼物的最大价值
+     * Get the maximum gift value
      *
-     * @param grid 数组
-     * @return 最大价值
+     * @param grid array
+     * @return maximum value
      */
     public int getMaxValue(int[][] grid) {
         if (grid == null || grid.length == 0) {
@@ -3928,10 +3929,10 @@ Cần dùng một mảng t để ghi lại vị trí xuất hiện của ký t�
 ```java
 class Solution {
     /**
-     * 最长不含重复字符的子字符串
+     * Longest substring without duplicate characters
      *
-     * @param s 字符串
-     * @return 最长不重复字符子串
+     * @param s string
+     * @return longest substring without duplicate characters
      */
     public int longestSubstringWithoutDuplication(String s) {
         if (s == null || s.length() == 0) {
@@ -4004,11 +4005,11 @@ Linked list dài hơn đi trước `|n1 - n2|` bước, sau đó hai linked list
 class Solution {
 
     /**
-     * 求两链表第一个公共节点
+     * Find the first common node of two linked lists
      *
-     * @param headA 链表A
-     * @param headB 链表B
-     * @return 第一个公共节点
+     * @param headA linked-list A head
+     * @param headB linked-list B head
+     * @return first common node
      */
     public ListNode findFirstCommonNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
@@ -4073,11 +4074,11 @@ Tìm k cuối cùng cũng tương tự.
 ```java
 class Solution {
     /**
-     * 求数字k在排序数组中出现的次数
+     * Count occurrences of k in the sorted array
      *
-     * @param nums 数组
-     * @param k 数字k
-     * @return k在数组中出现的次数
+     * @param nums array
+     * @param k number k
+     * @return number of occurrences of k in the array
      */
     public int getNumberOfK(int[] nums, int k) {
         if (nums == null || nums.length == 0) {
@@ -4167,10 +4168,10 @@ Trường hợp đặc biệt:
 ```java
 class Solution {
     /**
-     * 获取0~n-1缺失的数字
+     * Get the missing number from 0 to n-1
      *
-     * @param nums 数组
-     * @return 缺失的数字
+     * @param nums array
+     * @return missing number
      */
     public int getMissingNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -4228,10 +4229,10 @@ Tìm bằng phương pháp chia đôi.
 ```java
 class Solution {
     /**
-     * 找出单调递增数组中数值和下标相等的元素
+     * Find an element in the monotonically increasing array whose value equals its index
      *
-     * @param nums 数组
-     * @return 数值与下标相等的元素
+     * @param nums array
+     * @return element whose value equals its index
      */
     public int getNumberSameAsIndex(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -4293,10 +4294,10 @@ Chỉ cần dùng đệ quy.
  */
 class Solution {
     /**
-     * 求二叉树的深度
+     * Find the depth of the binary tree
      *
-     * @param root 二叉树根结点
-     * @return 深度
+     * @param root binary tree root node
+     * @return depth
      */
     public int treeDepth(TreeNode root) {
         if (root == null) {
@@ -4361,10 +4362,10 @@ Phương pháp này cần duyệt lặp lại các node nhiều lần, không kh
  */
 class Solution {
     /**
-     * 判断是否是平衡二叉树
+     * Determine whether the binary tree is balanced
      *
-     * @param root 二叉树根结点
-     * @return 是否是平衡二叉树
+     * @param root binary tree root node
+     * @return whether the binary tree is balanced
      */
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
@@ -4403,10 +4404,10 @@ class Solution {
     private boolean isBalanced;
 
     /**
-     * 判断是否是平衡二叉树
+     * Determine whether the binary tree is balanced
      *
-     * @param root 二叉树根结点
-     * @return 是否是平衡二叉树
+     * @param root binary tree root node
+     * @return whether the binary tree is balanced
      */
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
@@ -4463,10 +4464,10 @@ Trước hết thực hiện XOR, kết quả là phép XOR của hai số khác
 ```java
 class Solution {
     /**
-     * 求数组中只出现一次的两个数字
+     * Find the two numbers that appear only once in the array
      *
-     * @param nums 数字
-     * @return 两个数字组成的数组
+     * @param nums numbers
+     * @return array containing the two numbers
      */
     public int[] findNumsAppearOnce(int[] nums) {
         if (nums == null || nums.length < 2) {
@@ -4531,10 +4532,10 @@ Cộng riêng các bit xuất hiện trong biểu diễn nhị phân của từn
 ```java
 class Solution {
     /**
-     * 找出数组中只出现一次的数字，其它数字都出现三次
+     * Find the number that appears once while all other numbers appear three times
      *
-     * @param nums 数字
-     * @return 只出现一次的数字
+     * @param nums numbers
+     * @return number that appears once
      */
     public int findNumberAppearingOnce(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -4590,11 +4591,11 @@ import java.util.Set;
 
 class Solution {
     /**
-     * 在数组中找出和为target的两个数
+     * Find two numbers in the array whose sum is target
      *
-     * @param nums 数组
-     * @param target 目标和
-     * @return 满足条件的两个数构成的数组
+     * @param nums array
+     * @param target target sum
+     * @return array containing two numbers that satisfy the condition
      */
     public int[] findNumbersWithSum(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
@@ -4644,10 +4645,10 @@ import java.util.*;
 class Solution {
 
     /**
-     * 找出和为sum的连续正整数序列
+     * Find consecutive positive-integer sequences whose sum is sum
      *
-     * @param sum 和
-     * @return 结果列表
+     * @param sum sum
+     * @return result list
      */
     public List<List<Integer>> findContinuousSequence(int sum) {
         List<List<Integer>> res = new ArrayList<>();
@@ -4711,10 +4712,10 @@ Trước hết tách chuỗi thành mảng theo khoảng trắng, sau đó đả
 ```java
 class Solution {
     /**
-     * 翻转单词
+     * Reverse the words
      *
-     * @param s 字符串
-     * @return 翻转后的字符串
+     * @param s string
+     * @return string with the words reversed
      */
     public String reverseWords(String s) {
         if (s == null || s.length() < 2) {
@@ -4768,11 +4769,11 @@ Trước hết đảo ngược n ký tự đầu, sau đó đảo ngược các 
 class Solution {
 
     /**
-     * 左旋转字符串
+     * Left-rotate the string
      *
-     * @param str 字符串
-     * @param n 左旋的位数
-     * @return 旋转后的字符串
+     * @param str string
+     * @param n number of positions to rotate left
+     * @return rotated string
      */
     public String leftRotateString(String str, int n) {
         if (str == null || n < 1 || n > str.length()) {
@@ -4837,11 +4838,11 @@ import java.util.LinkedList;
 
 class Solution {
     /**
-     * 求滑动窗口的最大值
+     * Find the maximum value in each sliding window
      *
-     * @param nums 数组
-     * @param k 滑动窗口的大小
-     * @return 最大值构成的数组
+     * @param nums array
+     * @param k sliding-window size
+     * @return array of maximum values
      */
     public int[] maxInWindows(int[] nums, int k) {
         if (nums == null || k < 1 || k > nums.length) {
@@ -4929,10 +4930,10 @@ import java.util.Arrays;
 class Solution {
 
     /**
-     * 判断是否是连续的数字
+     * Determine whether the numbers are consecutive
      *
-     * @param numbers 数组
-     * @return 是否是顺子
+     * @param numbers array
+     * @return whether the numbers form a straight
      */
     public boolean isContinuous(int [] numbers) {
         if (numbers == null || numbers.length == 0) {
@@ -4998,11 +4999,11 @@ Giải thích:
 class Solution {
 
     /**
-     * 求圆圈最后一个数字
+     * Find the last remaining number in the circle
      *
-     * @param n n个数 [0..n-1]
-     * @param m 每次删除第 m 个数
-     * @return 最后一个数字
+     * @param n n numbers [0..n-1]
+     * @param m number removed each time
+     * @return last remaining number
      */
     public int lastRemaining(int n, int m) {
         int cnt = 0;
@@ -5104,11 +5105,11 @@ f(i) = (f(i - 1) + m) % i;
 class Solution {
 
     /**
-     * 求圆圈最后一个数字
+     * Find the last remaining number in the circle
      *
-     * @param n n个数 [0..n-1]
-     * @param m 每次删除第 m 个数
-     * @return 最后一个数字
+     * @param n n numbers [0..n-1]
+     * @param m number removed each time
+     * @return last remaining number
      */
     public int lastRemaining(int n, int m) {
         if (n < 1 || m < 1) {
@@ -5150,10 +5151,10 @@ Khi duyệt đến nums[i], tính hiệu giữa nums[i] và giá trị nhỏ nh�
 ```java
 class Solution {
     /**
-     * 股票的最大利润
+     * Maximum stock profit
      *
-     * @param nums 数组
-     * @return 最大利润
+     * @param nums array
+     * @return maximum profit
      */
     public int maxDiff(int[] nums) {
         if (nums == null || nums.length < 2) {
@@ -5196,10 +5197,11 @@ import java.util.stream.IntStream;
 class Solution {
 
     /**
-     * 求1+2+…+n（不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C））
+     * Compute 1+2+...+n (without multiplication, division, for, while, if, else,
+     * switch, case, or conditional expressions such as A?B:C)
      *
      * @param n 1~n
-     * @return 1~n的和
+     * @return sum from 1 to n
      */
     public int getSum(int n) {
         return IntStream.rangeClosed(1, n).sum();
@@ -5231,11 +5233,11 @@ Trước hết thực hiện XOR hai số để tìm kết quả cộng không c
 class Solution {
 
     /**
-     * 不用加减乘除做加法
+     * Add without using addition, subtraction, multiplication, or division
      *
-     * @param num1 数1
-     * @param num2 数2
-     * @return 两数之和
+     * @param num1 first number
+     * @param num2 second number
+     * @return sum of the two numbers
      */
     public int add(int num1, int num2) {
         int sum, carry;
@@ -5285,10 +5287,10 @@ Coi mỗi phần tử `B[i]` là tích của hai nửa, tức `A[0]xA[1]x...xA[i
 class Solution {
 
     /**
-     * 构建乘积数组
+     * Build the product array
      *
-     * @param A 数组A
-     * @return 乘积数组B
+     * @param A array A
+     * @return product array B
      */
     public int[] multiply(int[] A) {
         if (A == null || A.length < 1) {

@@ -23,19 +23,19 @@
    - Không xuống dòng trước dấu ngoặc.
 
 ```java
-// 正例
+// Correct example
 StringBuffer sb = new StringBuffer();
 sb.append("zi").append("xin")...
     .append("huang")...
     .append("huang")...
     .append("huang");
 
-// 反例
+// Incorrect example
 StringBuffer sb = new StringBuffer();
 sb.append("ge").append("cheng")...append
     ("no line break here");
 
-// 方法参数超过 120 个字符时，不要在逗号前换行
+// When method arguments exceed 120 characters, do not break before the comma
 method(args1, args2, args3, ...
     , argsX);
 ```
@@ -67,13 +67,13 @@ for (int i = 0; i < count; ++i) {
     list.add(i + 1);
 }
 
-// 子列表
+// Sublist
 List<Integer> subList = list.subList(0, list.size() - 1);
 
-// 对原集合元素个数修改
+// Modify the number of elements in the original collection
 list.add(11);
 
-// 导致子列表异常
+// Cause the sublist to throw an exception
 // Exception in thread "main" java.util.ConcurrentModificationException
 System.out.println(subList);
 ```
@@ -84,10 +84,10 @@ System.out.println(subList);
 String[] str = new String[] {"you", "wu"};
 List list = Arrays.asList(str);
 
-// list.add("bingo") 运行时异常
+// list.add("bingo") throws a runtime exception
 
 str[0] = "bingo";
-// list.get(0) 也会随着修改。
+// list.get(0) also changes accordingly.
 ```
 
 8. Khi khởi tạo collection, hãy chỉ định kích thước ban đầu của collection. Nếu HashMap cần chứa 1024 phần tử mà không thiết lập kích thước ban đầu (mặc định là 16), khi số lượng phần tử liên tục tăng, dung lượng sẽ buộc phải mở rộng 7 lần; resize cần xây dựng lại hash table, điều này ảnh hưởng nghiêm trọng đến hiệu năng.

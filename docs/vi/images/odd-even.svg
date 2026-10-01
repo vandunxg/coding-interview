@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="787" height="184" viewBox="0 0 787 184" role="img" aria-labelledby="title desc">
+  <title id="title">Lũy thừa với số mũ chẵn và lẻ</title>
+  <desc id="desc">Công thức tính a mũ n theo việc n là số chẵn hay số lẻ.</desc>
+  <rect width="787" height="184" fill="#fff"/>
+  <g fill="#111" font-family="Georgia, 'Times New Roman', serif">
+    <text x="26" y="113" font-size="52">a</text>
+    <text x="61" y="82" font-size="30">n</text>
+    <text x="94" y="113" font-size="52">=</text>
+    <text x="151" y="47" font-size="86">{</text>
+    <text x="202" y="57" font-size="42">a</text>
+    <text x="232" y="36" font-size="24">n/2</text>
+    <text x="300" y="57" font-size="42">· a</text>
+    <text x="374" y="36" font-size="24">n/2</text>
+    <text x="500" y="57" font-size="34">n là số chẵn</text>
+    <text x="202" y="129" font-size="42">a</text>
+    <text x="232" y="108" font-size="24">n/2</text>
+    <text x="300" y="129" font-size="42">· a</text>
+    <text x="374" y="108" font-size="24">n/2</text>
+    <text x="442" y="129" font-size="42">· a</text>
+    <text x="500" y="129" font-size="34">n là số lẻ</text>
+  </g>
+</svg>

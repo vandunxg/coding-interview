@@ -75,7 +75,7 @@ Môi trường thực thi của thuật toán Doomsday của giáo sư Conway ch
 Trước hết, hãy làm rõ **năm nhuận là gì**. Năm nhuận là năm chia hết cho 4 nhưng không chia hết cho 100, hoặc chia hết cho 400. Tháng 2 của năm nhuận có 29 ngày, còn tháng 2 của năm thường có 28 ngày.
 
 ```java
-// 判断是否是闰年
+// Determine whether it is a leap year
 boolean isLeapYear(int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }

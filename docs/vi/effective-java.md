@@ -152,7 +152,7 @@ public class NutritionFacts {
         }
     }
 
-    // 私有构造器
+    // Private constructor
     private NutritionFacts(Builder builder) {
         servingSize = builder.servingSize;
         servings = builder.servings;

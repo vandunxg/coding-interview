@@ -142,7 +142,7 @@ public String compact(String message) {
     }
 }
 
-// 拆解后...
+// After decomposition...
 public String compact(String message) {
     if (shouldNotCompact()) {
         return Assert.format(message, expected, actual);
