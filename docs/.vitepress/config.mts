@@ -107,6 +107,7 @@ const vietnameseThemeConfig = {
 }
 
 export default defineConfig({
+  base: '/coding-interview/',
   title: 'coding-interview',
   description: '互联网公司 IT 技术面试题集',
   locales: {
@@ -125,11 +126,11 @@ export default defineConfig({
     }
   },
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/coding-interview/favicon-32x32.png' }]
   ],
   cleanUrls: true,
   sitemap: {
-    hostname: 'https://interview.doocs.org'
+    hostname: 'https://vandunxg.github.io/coding-interview'
   },
   vite: {
     build: {

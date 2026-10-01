@@ -35,8 +35,8 @@ jobs:
       - name: Build with VitePress
         run: pnpm run docs:build
 
-      - name: Generate CNAME
-        run: echo "interview.doocs.org" > docs/.vitepress/dist/CNAME
+      - name: Check GitHub Pages base path
+        run: pnpm run docs:check-deployment
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
