@@ -3,6 +3,8 @@ name: Build and deploy
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -24,6 +26,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Typecheck docs
+        run: pnpm run docs:typecheck
+
+      - name: Check translation mirrors
+        run: pnpm run docs:check-translations
+
       - name: Build with VitePress
         run: pnpm run docs:build
 
@@ -37,6 +45,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pages: write
