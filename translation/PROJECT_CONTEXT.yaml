@@ -1,0 +1,105 @@
+# Canonical project configuration. Paths are relative to the repository root.
+# This is a bootstrap template, not a ready-to-run project configuration.
+schema_version: 1
+base_version: 1.0.0
+status: needs_setup
+project:
+  id: null
+  title: null
+  audience: "Developer đọc tài liệu kỹ thuật bằng tiếng Việt"
+  source_languages: []
+  target_language: vi-VN
+source:
+  kind: null # repo-docs | pdf-parts | web-snapshot
+  location: null
+  revision:
+    kind: null # git-commit | git-tree | sha256-manifest
+    value: null
+  edition_or_version: null # Preserve the source context; do not infer a newer version.
+  scope_include: []
+  scope_exclude: []
+  inventory: translation/state/source-map.yaml
+  order_policy: null # source-navigation | document-order | explicit-inventory
+mapping: [] # Each item: source, target, mode (mirror | explicit), exclusions.
+modules:
+  source_adapter: null
+  format_adapters: []
+  domain_profiles: []
+  workflows:
+    - translation/workflows/translation.md
+policies:
+  fidelity: faithful
+  code_comments: preserve # preserve | translate_explanatory
+  display_strings: preserve # preserve | scoped_allowlist
+  string_allowlist: [] # Locator, allowed change, reason, approval reference.
+  inline_literals: preserve
+  markup_text_allowlist: [] # Display frontmatter fields/attributes with exact scope; not technical keys.
+  internal_links: verified_mapping # Preserve destination semantics, not blindly the path string.
+  external_links: preserve
+  image_text: preserve_and_report # preserve_and_report | localize_verified_copy
+  terminology: english_first_by_meaning
+  translator_additions: disallow_in_translation
+  language_exceptions: [] # Exact locator, token/category, reason, approval reference.
+  source_corrections: report_only
+  newline_normalization: none # Any normalization needs an explicit scope and rationale.
+execution:
+  mode: sequential # sequential | parallel
+  max_workers: 1
+  unit_policy: null # whole-file | semantic-section | fixed-part-with-boundary
+  review_mode: sequential-self-review # sequential-self-review | independent
+  semantic_review_scope: full
+  retry_failed_units_only: true
+  state_root: translation/state
+permissions:
+  # Empty allowlists mean no write permission, NOT unrestricted access.
+  protected_paths: []
+  coordinator_write: []
+  worker_write: []
+  reviewer_write: [] # Bootstrap adds assigned report subtree for report-only review; no target writes.
+  integrator_write: []
+  authorization_reference: null
+site:
+  enabled: false
+  output_base: null
+  route_mapping: null
+  missing_translation: disable_switch_or_labelled_source_link
+  ui_changes_authorized: false
+validation:
+  # For each required check, record an actual command OR a reproducible manual method.
+  # No command below is executed merely because it appears in this file.
+  checks:
+    - id: source_protection
+      required: true
+      method: null
+    - id: full_semantic_review
+      required: true
+      method: "Đối chiếu toàn bộ owned source và target hai chiều theo coverage map."
+    - id: protected_spans
+      required: true
+      method: null
+    - id: structure
+      required: true
+      method: null
+    - id: links_and_assets
+      required: true
+      method: null
+    - id: residual_language
+      required: true
+      method: "Phân loại mọi hit trong prose/metadata/comment theo policy và allowlist."
+  conditional_checks: [] # Add boundary/render/build/route checks when their module applies.
+git:
+  commit: false
+  push: false
+  deploy: false
+  branch: null
+  remote: null
+  authorization_reference: null
+  unit_commit_policy: after_verified # Does not grant permission to commit.
+release:
+  kind: translated-files # translated-files | merged-document | bilingual-site
+  output: null
+  archive: null
+  include_source_material: false
+setup_blockers:
+  - "Chưa khảo sát và pin nguồn thực tế."
+  - "Chưa xác nhận mapping, module, quyền ghi và phương pháp kiểm tra."
